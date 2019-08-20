@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import backgroundImage from "./images/background.jpg";
-import "./App.css";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { usePosition } from "./components/geolocation";
+import "./css/App.css";
+import backgroundImage from "./images/background.jpg";
 
 function App() {
   const [weatherApiResponse, setWeatherApiResponse] = useState({

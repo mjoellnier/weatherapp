@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+import backgroundImage from "./images/background.jpg";
 import "./App.css";
-import "./css/weather-icons.min.css";
 import axios from "axios";
 import { usePosition } from "./components/geolocation";
 
 function App() {
   const [weatherApiResponse, setWeatherApiResponse] = useState({
-    name: "...loading"
+    name: "...loading",
+    main: {},
+    weather: [{}]
   });
   const [firstTime, setFirstTime] = useState(true);
   const appId = "8f1e29cb0f7a12f19c6d87da31359214";
@@ -29,7 +30,8 @@ function App() {
         "&lon=" +
         longitude +
         "&appid=" +
-        appId;
+        appId +
+        "&units=metric";
       axios.get(path).then(({ data }) => {
         setWeatherApiResponse(data);
       });
@@ -37,12 +39,26 @@ function App() {
   }, [latitude, longitude]);
 
   return (
-    <div className="App">
-      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+    <div
+      className="App"
+      style={{
+        background: "url(" + backgroundImage + ") no-repeat center center fixed"
+      }}
+    >
       <div id="weatherBox">
         <h1>The weather in {weatherApiResponse.name}</h1>
-        <p>The weather will be good :)</p>
-        <i id="weatherIcon" class="wi wi-na" />
+        <h2>
+          {weatherApiResponse.main.temp}°C
+          <img
+            src={
+              "http://openweathermap.org/img/wn/" +
+              weatherApiResponse.weather[0].icon +
+              "@2x.png"
+            }
+            className="App-logo"
+            alt="logo"
+          />
+        </h2>
       </div>
     </div>
   );

@@ -1,29 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 .App {
   text-align: center;
-  background-color: green;
+  background-color: darkslategray;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #weatherBox {
-  background-color: royalblue;
+  background-color: #c5815c78;
+  border-radius: 50px;
   max-width: 60vw;
   min-width: 400px;
-  max-height: 40vh;
-  min-height: 300px;
+  padding: 2%;
+  font-family: "Montserrat", sans-serif;
+}
+
+#weatherBox > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #weatherIcon {
   font-size: 500%;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
 }
 
 .App-header {

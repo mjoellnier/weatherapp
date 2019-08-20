@@ -1,5 +1,23 @@
 .App {
   text-align: center;
+  background-color: green;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#weatherBox {
+  background-color: royalblue;
+  max-width: 60vw;
+  min-width: 400px;
+  max-height: 40vh;
+  min-height: 300px;
+}
+
+#weatherIcon {
+  font-size: 500%;
 }
 
 .App-logo {

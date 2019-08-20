@@ -11,7 +11,7 @@ function App() {
     weather: [{}]
   });
   const [firstTime, setFirstTime] = useState(true);
-  const appId = "8f1e29cb0f7a12f19c6d87da31359214";
+  const appId = ""; //ENTER YOUR API KEY HERE!
   let { latitude, longitude, error } = usePosition();
 
   /**
